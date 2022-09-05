@@ -10,11 +10,11 @@ import { FieldError } from "react-hook-form";
 interface InputProps extends ChakraInputProps {
   name: string;
   label?: string;
-  error: FieldError;
+  error?: Partial<FieldError>;
 }
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { name, label, error, ...rest },
+  { name, label, error = null, ...rest },
   ref
 ) => {
   return (
